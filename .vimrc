@@ -10,6 +10,7 @@ Plugin 'Chiel92/vim-autoformat'
 filetype plugin indent on
 
 " Apply black formatter on save
+set shell=/bin/bash
 au BufWrite * :Autoformat
 let g:autoformat_autoindent = 0
 let g:autoformat_retab = 0
