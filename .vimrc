@@ -8,7 +8,10 @@ call vundle#rc()
 " Specify plugins
 Plugin 'gmarik/vundle'
 Plugin 'Chiel92/vim-autoformat'
+
+" Additional config for vundle
 filetype plugin indent on
+set shell=/bin/bash
 
 " Apply formatter on save
 au BufWrite * :Autoformat
