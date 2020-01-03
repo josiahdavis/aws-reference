@@ -2,7 +2,6 @@
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/vundle/
-set shell=/bin/bash
 call vundle#rc()
 
 " Specify plugins
