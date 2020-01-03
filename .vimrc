@@ -2,13 +2,14 @@
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+call vundle#begin()
 
 " Specify plugins
 Plugin 'gmarik/vundle'
 Plugin 'Chiel92/vim-autoformat'
 
 " Additional config for vundle
+call vundle#end()
 filetype plugin indent on
 set shell=/bin/bash
 
