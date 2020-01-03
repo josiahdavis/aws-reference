@@ -5,7 +5,7 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#begin()
 
 " Specify plugins
-Plugin 'gmarik/vundle'
+Plugin 'VundleVim/Vundle.vim'
 Plugin 'Chiel92/vim-autoformat'
 
 " Additional config for vundle
