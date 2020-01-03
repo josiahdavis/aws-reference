@@ -1,7 +1,7 @@
 " Required configuration for vundle
 set nocompatible
 filetype off
-set rtp+=~/.vim/plugin/Vundle.vim
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " Specify plugins
