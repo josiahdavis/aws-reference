@@ -7,6 +7,7 @@ call vundle#begin()
 " Specify plugins
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'Chiel92/vim-autoformat'
+Plugin 'tmhedberg/SimpylFold'
 
 " Additional config for vundle
 call vundle#end()
@@ -20,6 +21,9 @@ au BufWrite * :Autoformat
 let g:autoformat_autoindent = 0
 let g:autoformat_retab = 0
 let g:autoformat_remove_trailing_spaces = 0
+
+" Use better code folding
+let g:SimpylFold_docstring_preview = 1
 
 " Use black formatter
 let g:formatters_python=['black']
