@@ -1,8 +1,5 @@
 #!/bin/bash
 set -e -x
-apt install ctags
-apt install ack
-apt install tree
 curl -o /home/ubuntu/.tmux.conf https://raw.githubusercontent.com/josiahdavis/aws-reference/master/.tmux.conf
 curl -o /home/ubuntu/start_tmux.sh https://raw.githubusercontent.com/josiahdavis/aws-reference/master/start_tmux.sh
 pip3 install black
@@ -11,3 +8,6 @@ curl -o /home/ubuntu/.vimrc https://raw.githubusercontent.com/josiahdavis/aws-re
 chown -R ubuntu:ubuntu /home/ubuntu/.vim
 chown ubuntu:ubuntu /home/ubuntu/.vimrc
 runuser -l  ubuntu -c 'vim +PluginInstall +qall'
+apt install ctags
+apt install ack
+apt install tree
