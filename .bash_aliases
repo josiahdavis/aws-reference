@@ -1,0 +1,7 @@
+alias ls="ls -alhG"
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias eb="vim ~/.bash_aliases"
+alias rb="source ~/.bash_aliases"
