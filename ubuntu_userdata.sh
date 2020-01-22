@@ -16,6 +16,7 @@ runuser -l  ubuntu -c 'vim +PluginInstall +qall'
 
 # Configure bash
 curl https://raw.githubusercontent.com/josiahdavis/aws-reference/master/.bash_aliases -o /home/ubuntu/.bash_aliases
+echo 'PS1="\W: "' >> /home/ubuntu/.bashrc
 
 # Additional packages
 apt install ctags
