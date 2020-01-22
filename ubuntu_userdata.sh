@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e -x
-apt-get install ctags
+apt install ctags
 apt install ack
 apt install tree
 curl -o /home/ubuntu/.tmux.conf https://raw.githubusercontent.com/josiahdavis/aws-reference/master/.tmux.conf
