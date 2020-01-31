@@ -19,6 +19,5 @@ curl https://raw.githubusercontent.com/josiahdavis/aws-reference/master/.bash_al
 echo 'PS1="\W: "' >> /home/ubuntu/.bashrc
 
 # Additional packages
-apt install ctags
 apt install ack
 apt install tree
