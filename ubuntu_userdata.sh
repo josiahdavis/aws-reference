@@ -21,3 +21,4 @@ echo 'PS1="\W: "' >> /home/ubuntu/.bashrc
 # Additional packages
 apt install ack
 apt install tree
+apt-get install ctags
