@@ -8,3 +8,4 @@ alias rb="source ~/.bash_aliases"
 alias check_start="vim /var/log/cloud-init-output.log"
 alias c='clear'
 alias make_ctags='ctags -R .'
+alias a='tmux attach'
