@@ -2,7 +2,8 @@
 set -e -x
 
 # Configure tmux
-curl https://raw.githubusercontent.com/josiahdavis/aws-reference/master/.tmux.conf -o /home/ubuntu/.tmux.conf
+runuser -l  ubuntu -c 'git clone https://github.com/jimeh/tmux-themepack.git /home/ubuntu/.tmux-themepack'
+runuser -l  ubuntu -c 'curl https://raw.githubusercontent.com/josiahdavis/aws-reference/master/.tmux.conf -o /home/ubuntu/.tmux.conf'
 curl https://raw.githubusercontent.com/josiahdavis/aws-reference/master/start_tmux.sh -o /bin/start_tmux
 chmod +x /bin/start_tmux
 
