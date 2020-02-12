@@ -9,11 +9,16 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'mileszs/ack.vim'
+Plugin 'crusoexia/vim-monokai'
 
 " Additional config for vundle
 call vundle#end()
 filetype plugin indent on
 set shell=/bin/bash
+
+" Color
+syntax enable
+silent! colorscheme monokai
 
 " Apply formatter on save
 au BufWrite * :Autoformat
