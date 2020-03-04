@@ -8,6 +8,7 @@ alias check_start="vim /var/log/cloud-init-output.log"
 alias c='clear'
 alias make_ctags='ctags -R .'
 alias a='tmux attach'
+alias save_pw='git config --global credential.helper cache'
 
 mcd(){
   mkdir -p $1 && cd $1
