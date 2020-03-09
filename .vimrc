@@ -38,3 +38,4 @@ let g:formatters_python=['black']
 set encoding=utf-8
 set ruler
 set number
+set viminfo='20,<1000 " inc copy/paste-buffer
