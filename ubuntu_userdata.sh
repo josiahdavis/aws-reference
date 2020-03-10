@@ -20,6 +20,10 @@ curl https://raw.githubusercontent.com/josiahdavis/aws-reference/master/.bash_al
 chown ubuntu:ubuntu /home/ubuntu/.bash_aliases
 echo 'PS1="\W: "' >> /home/ubuntu/.bashrc
 
+# Configure git
+curl https://raw.githubusercontent.com/josiahdavis/aws-reference/master/.gitconfig -o /home/ubuntu/.gitconfig
+chown ubuntu:ubuntu /home/ubuntu/.gitconfig
+
 # Additional packages
 apt install tree
 apt-get install ctags
