@@ -1,5 +1,9 @@
 [credential]
-        helper = cache --timeout=604800
+	helper = cache --timeout=604800
 [user]
-        name = Josiah Davis
-        email = josiah.j.davis@gmail.com
+	name = Josiah Davis
+	email = josiah.j.davis@gmail.com
+[init]
+	templatedir = ~/.git_template
+[alias]
+	ctags = !.git/hooks/ctags
