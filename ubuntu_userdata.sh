@@ -25,5 +25,5 @@ curl https://raw.githubusercontent.com/josiahdavis/aws-reference/master/.gitconf
 chown ubuntu:ubuntu /home/ubuntu/.gitconfig
 
 # Additional packages
-apt install tree
 apt-get install ctags
+apt-get install tree
