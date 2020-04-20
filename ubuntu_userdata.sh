@@ -21,6 +21,7 @@ chown ubuntu:ubuntu /home/ubuntu/.bash_aliases
 echo 'PS1="\W: "' >> /home/ubuntu/.bashrc
 
 # Configure git
+# todo: add git template in here for ctags hooks
 curl https://raw.githubusercontent.com/josiahdavis/aws-reference/master/.gitconfig -o /home/ubuntu/.gitconfig
 chown ubuntu:ubuntu /home/ubuntu/.gitconfig
 
