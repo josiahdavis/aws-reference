@@ -1,2 +1,2 @@
 # Personal AWS Reference
-Reference files useful for compute on AWS
+Personal reference files useful for computing on AWS 
