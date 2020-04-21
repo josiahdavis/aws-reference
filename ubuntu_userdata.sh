@@ -1,6 +1,8 @@
 #!/bin/bash
 set -e -x
 
+apt-get install -y ctags
+
 # Download and link dot files
 runuser -l ubuntu -c 'git clone https://github.com/josiahdavis/dotfiles.git /home/ubuntu/dotfiles'
 runuser -l ubuntu -c 'bash /home/ubuntu/dotfiles/link_dot.sh'
@@ -14,7 +16,3 @@ runuser -l  ubuntu -c 'vim +PluginInstall +qall'
 runuser -l  ubuntu -c 'git clone https://github.com/jimeh/tmux-themepack.git /home/ubuntu/.tmux-themepack'
 curl https://raw.githubusercontent.com/josiahdavis/aws-reference/master/start_tmux.sh -o /bin/stm
 chmod +x /bin/stm
-
-# Additional packages
-apt-get install ctags
-apt-get install tree
