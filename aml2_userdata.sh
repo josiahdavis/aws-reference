@@ -12,7 +12,6 @@ runuser -l ec2-user -c 'curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 runuser -l  ec2-user -c 'vim +PlugInstall +qall'
 
 # Configure tmux
-runuser -l  ec2-user -c 'git clone https://github.com/jimeh/tmux-themepack.git $HOME/.tmux-themepack'
-curl https://raw.githubusercontent.com/josiahdavis/aws-reference/master/start_tmux.sh -o /bin/stm
+curl https://raw.githubusercontent.com/josiahdavis/aws-reference/master/start_tmux_simple.sh -o /bin/stm
 chmod +x /bin/stm
 
