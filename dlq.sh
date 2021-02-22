@@ -1,4 +1,5 @@
 #!/bin/bash
+# Deep Learning Query Tool (dlq)
 # This script creates a mapping of AMIs across regions.
 # Example:
 #   ./dlq.sh
@@ -41,7 +42,7 @@ get_ami_id() {
 }
 
 get_all_ami_ids() {
-    echo -e "-----" > /tmp/amis.yaml
+    echo "-----" > /tmp/amis.yaml
     for region in "${regions[@]}"; do
         get_ami_id $region &>/dev/null
         if [ $? -eq 0 ]; then
