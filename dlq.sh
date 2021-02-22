@@ -3,11 +3,12 @@
 # This script creates a mapping of AMIs across regions.
 # Example:
 #   ./dlq.sh
-#   ./dlq.sh [<ami name>]
+#   ./dlq.sh [<ami name>] [<output file>]
 
 AMI=${1:-"Deep Learning AMI (Amazon Linux 2) Version 40.0"}
+OUTPUT=${2:-"/tmp/amis.yaml"}
 
-declare -a regions=( 
+declare -a REGIONS=( 
     "us-east-1"
     "us-east-2"
     "us-west-1" 
@@ -32,26 +33,27 @@ declare -a regions=(
 )
 
 get_ami_id() {
-    region=$1
+    REGION=$1
     ID=$(aws ec2 describe-images \
             --owners amazon \
             --filters "Name=name,Values=${AMI}" "Name=state,Values=available" \
             --query "reverse(sort_by(Images, &CreationDate))[:1].ImageId" \
             --output text \
-            --region $region)
+            --region $REGION)
 }
 
 get_all_ami_ids() {
-    echo "-----" > /tmp/amis.yaml
-    for region in "${regions[@]}"; do
-        get_ami_id $region &>/dev/null
+    echo "-----" > $OUTPUT
+    for REGION in "${REGIONS[@]}"; do
+        get_ami_id $REGION &>/dev/null
         if [ $? -eq 0 ]; then
-            YAML="${region}: \n\tAMI: ${ID}"
-            echo -e $YAML >> /tmp/amis.yaml
+            YAML="${REGION}: \n\tAMI: ${ID}"
+            echo -e $YAML >> $OUTPUT
         else
-            echo "${AMI} not found for ${region}"
+            echo "${AMI} not found for ${REGION}"
         fi
     done
+    echo "Mapping file written to ${OUTPUT}"
 }
 
 get_all_ami_ids
