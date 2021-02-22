@@ -1,5 +1,7 @@
 #!/bin/bash
-# Checks whether a tmux session is present.
+# Simple script to start a tmux session.
+# 
+# Functionality: Checks whether a tmux session is present.
 # If not, it creates one for you with the options provided.
 # 
 # Example usage:
