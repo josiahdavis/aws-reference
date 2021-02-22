@@ -55,8 +55,8 @@ get_all_ami_ids() {
     for REGION in "${REGIONS[@]}"; do
         get_ami_id $REGION &>/dev/null
         if [ $? -eq 0 ]; then
-            YAML="${REGION}: \n\tAMI: ${ID}"
-            echo -e $YAML >> $OUTPUT
+            YAML="    ${REGION}:\n      AMI: ${ID}"
+            echo -e "$YAML" >> $OUTPUT
         else
             echo "${AMI} not found for ${REGION}"
         fi
