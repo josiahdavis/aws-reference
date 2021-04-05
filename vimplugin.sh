@@ -15,6 +15,7 @@ if [ -z ${inst+x} ]; then
     exit 1
 fi
 
+# Source repos
 declare -a packs=(
     "https://github.com/itchyny/lightline.vim.git"
     "https://github.com/morhetz/gruvbox.git"
@@ -22,15 +23,21 @@ declare -a packs=(
     "https://github.com/preservim/nerdtree.git"
 )
 
-pat="\/([a-z\.\-]*)\.git"
+# Pattern to get the package name
+#    \/                   Search for '/'
+#      ([a-z\.\-]*)       Capture 'a-z', '.' or '-'
+#                  \.git  Search for exact match '.git'
+pat="\/([a-z\.\-]*)\.git" 
 for pack in "${packs[@]}"; do
     [[ $pack =~ $pat ]] # $pat must be unquoted
-    echo "Transferring ${BASH_REMATCH[1]} to ${inst}..."
+    echo "Checking ${BASH_REMATCH[1]}..."
+    # Clone repo if doesn't exist locally
     if [ ! -d /tmp/${BASH_REMATCH[1]} ]; then
-        # Clone if repo doesn't exist locally
         git clone --depth 1 ${pack} /tmp/${BASH_REMATCH[1]}
         transfer="Y"
     else
+        # If repo exists locally, ask whether you would like to transfer it to 
+        # remote instance 
         echo "/tmp/${BASH_REMATCH[1]} already exists. Skipping download." 
         echo "Would you like to transfer ${BASH_REMATCH[1]} to your instance (Y/N)?"
         read transfer
@@ -39,7 +46,12 @@ for pack in "${packs[@]}"; do
             read transfer
         done
     fi
+    # Transfer repo to remote instance
     if [ $transfer == "Y" ]; then
         scp -r /tmp/${BASH_REMATCH[1]} ${inst}:~/.vim/pack/vendor/start/
     fi
 done 
+
+echo "Process completed successfully."
+echo "You may need to perform some manual steps on the EC2 instance."
+echo "mv .vim/pack/vendor/start/{lightline.vim,lightline}"
