@@ -21,6 +21,7 @@ declare -a packs=(
     "https://github.com/morhetz/gruvbox.git"
     "https://github.com/tpope/vim-commentary.git"
     "https://github.com/preservim/nerdtree.git"
+    "https://github.com/Chiel92/vim-autoformat.git"
 )
 
 # Pattern to get the package name
