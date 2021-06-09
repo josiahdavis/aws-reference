@@ -12,7 +12,7 @@ fi
 
 git config --global user.name "$USER"
 git config --global user.email "$EMAIL"
-git config credential.helper "cache --timeout=3600"
+git config credential.helper "cache --timeout=604800"
 git config --global alias.co checkout
 git config --global alias.st status
 # Reference: 
