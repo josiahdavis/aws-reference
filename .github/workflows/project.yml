@@ -15,7 +15,3 @@ jobs:
     steps:
     - name: Assign NEW issues and NEW pull requests to project 1
       uses: srggrs/assign-one-project-github-action@1.2.1
-      if: github.event.action == 'opened'
-      with:
-        project: 'https://github.com/josiahdavis/aws-reference/projects/1'
-        column_name: 'To Do'
