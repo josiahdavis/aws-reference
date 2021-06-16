@@ -1,8 +1,10 @@
-name: Auto Assign to Project
+name: Auto Assign to Project(s)
 
 on:
   issues:
+    types: [opened, labeled]
   pull_request:
+    types: [opened, labeled]
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -13,3 +15,6 @@ jobs:
     steps:
     - name: Assign NEW issues and NEW pull requests to project 1
       uses: srggrs/assign-one-project-github-action@1.2.1
+      if: github.event.action == 'opened'
+      with:
+        project: 'https://github.com/srggrs/assign-one-project-github-action/projects/1'
