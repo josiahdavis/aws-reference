@@ -13,7 +13,7 @@
 # sa-east-1: 
 #   AMI: ami-093e3f53198605e7d
 
-AMI=${1:-"Deep Learning AMI (Amazon Linux 2) Version 40.0"}
+AMI=${1:-"Deep Learning AMI (Amazon Linux 2) Version 47.0"}
 OUTPUT=${2:-"/tmp/amis.yaml"}
 
 declare -a REGIONS=( 
@@ -55,7 +55,7 @@ get_all_ami_ids() {
     for REGION in "${REGIONS[@]}"; do
         get_ami_id $REGION &>/dev/null
         if [ $? -eq 0 ]; then
-            YAML="    ${REGION}:\n      AMI: ${ID}"
+            YAML="    ${REGION}:\n      AMZN2: ${ID}"
             echo -e "$YAML" >> $OUTPUT
         else
             echo "${AMI} not found for ${REGION}"
